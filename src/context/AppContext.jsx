@@ -10,9 +10,12 @@ export const AppProvider = ({ children }) => {
   ])
 
   const [settings, setSettings] = useState({
-    theme: 'light',
-    language: 'en'
+    theme: 'light'
   })
 
-  return <AppContext.Provider value={{ users, setUsers, settings, setSettings }}>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={{ users, setUsers, settings, setSettings }}>
+      <div className={settings.theme}>{children}</div>
+    </AppContext.Provider>
+  )
 }

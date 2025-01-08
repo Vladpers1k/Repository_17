@@ -6,7 +6,7 @@ const Users = () => {
   const { users } = useContext(AppContext)
 
   return (
-    <div>
+    <div className="users-page">
       <h2>Users Page</h2>
       <UserList users={users} />
     </div>
