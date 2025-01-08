@@ -1,17 +1,14 @@
-import React from 'react'
-import { useAppContext } from '../context/AppContext'
+import React, { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
+import UserList from './Nested/UserList'
 
 const Users = () => {
-  const { users } = useAppContext()
+  const { users } = useContext(AppContext)
 
   return (
     <div>
-      <h1>User List</h1>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
+      <h2>Users Page</h2>
+      <UserList users={users} />
     </div>
   )
 }

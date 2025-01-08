@@ -1,16 +1,19 @@
-import React from 'react'
-import { useAppContext } from '../context/AppContext'
+import React, { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 
 const Settings = () => {
-  const { settings, setSettings } = useAppContext()
+  const { settings, setSettings } = useContext(AppContext)
 
   const toggleTheme = () => {
-    setSettings((prev) => ({ ...prev, theme: prev.theme === 'light' ? 'dark' : 'light' }))
+    setSettings((prev) => ({
+      ...prev,
+      theme: prev.theme === 'light' ? 'dark' : 'light'
+    }))
   }
 
   return (
     <div>
-      <h1>Settings</h1>
+      <h2>Settings Page</h2>
       <p>Current Theme: {settings.theme}</p>
       <button onClick={toggleTheme}>Toggle Theme</button>
     </div>
