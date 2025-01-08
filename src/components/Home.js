@@ -1,16 +1,7 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
+import React from 'react'
 
 const Home = () => {
-  const { settings } = useContext(AppContext)
-
-  return (
-    <div>
-      <h1>Home</h1>
-      <p>Current Theme: {settings.theme}</p>
-      <p>Language: {settings.language}</p>
-    </div>
-  )
+  return <h1>Welcome to the Home Page</h1>
 }
 
 export default Home

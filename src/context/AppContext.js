@@ -1,12 +1,17 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
-export const AppContext = createContext()
+const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
-  const [settings, setSettings] = useState({
-    theme: 'light',
-    language: 'en'
-  })
+  const [users, setUsers] = useState([
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+    { id: 3, name: 'Charlie' }
+  ])
 
-  return <AppContext.Provider value={{ settings, setSettings }}>{children}</AppContext.Provider>
+  const [settings, setSettings] = useState({ theme: 'light', notifications: true })
+
+  return <AppContext.Provider value={{ users, setUsers, settings, setSettings }}>{children}</AppContext.Provider>
 }
+
+export const useAppContext = () => useContext(AppContext)
