@@ -102,12 +102,24 @@ nav a.active {
   margin: 5px 0;
 }
 
-.light {
+body.light {
   background-color: white;
   color: black;
 }
 
-.dark {
+body.dark {
   background-color: black;
   color: white;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }
