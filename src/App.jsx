@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { Provider } from 'react-redux'
+import store from './store/store'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { AppProvider } from './context/AppContext'
 import routes from './routes'
 
 const App = () => {
   return (
-    <AppProvider>
+    <Provider store={store}>
       <div>
-        <h1>React Context Demo</h1>
+        <h1>React Redux Demo</h1>
         {routes}
       </div>
-    </AppProvider>
+    </Provider>
   )
 }
 

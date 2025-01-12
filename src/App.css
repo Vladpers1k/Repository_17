@@ -101,3 +101,13 @@ nav a.active {
 .user-list li {
   margin: 5px 0;
 }
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}

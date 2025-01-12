@@ -8,3 +8,5 @@ export const store = configureStore({
     settings: settingsReducer
   }
 })
+
+export default store
