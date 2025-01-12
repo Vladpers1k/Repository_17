@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import UserList from './Nested/UserList'
 
 const Users = () => {
-  const { users } = useContext(AppContext)
+  const users = useSelector((state) => state.users)
 
   return (
     <div className="users-page">

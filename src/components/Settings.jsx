@@ -1,21 +1,16 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleTheme } from '../store/settingsSlice'
 
 const Settings = () => {
-  const { settings, setSettings } = useContext(AppContext)
-
-  const toggleTheme = () => {
-    setSettings((prev) => ({
-      ...prev,
-      theme: prev.theme === 'light' ? 'dark' : 'light'
-    }))
-  }
+  const theme = useSelector((state) => state.settings.theme)
+  const dispatch = useDispatch()
 
   return (
     <div>
       <h2>Settings Page</h2>
-      <p>Current Theme: {settings.theme}</p>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+      <p>Current Theme: {theme}</p>
+      <button onClick={() => dispatch(toggleTheme())}>Toggle Theme</button>
     </div>
   )
 }
